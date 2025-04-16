@@ -5,6 +5,7 @@ import './App.css';  // Estilos globais
 
 import Cadastro from './pages/Cadastro/Cadastro.jsx'; // Caminho correto
 
+import InfoJob from './pages/InfoJob/InfoJob.jsx';
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
     return (
         <>
             {/* <Login /> */}  
-            <Cadastro />  
+            
+            {/* <Cadastro /> */}  
+            <InfoJob/>  
         </>
     );
 }
