@@ -1,5 +1,10 @@
 // import { useState } from 'react';
-import Login from './pages/Login/Login';
+// import Login from './pages/Login/Login';  // Comentando a importação do Login
+
+import './App.css';  // Estilos globais
+
+import Cadastro from './pages/Cadastro/Cadastro.jsx'; // Caminho correto
+
 
 function App() {
 
@@ -8,7 +13,8 @@ function App() {
 
     return (
         <>
-        <Login />
+            {/* <Login /> */}  
+            <Cadastro />  
         </>
     );
 }
