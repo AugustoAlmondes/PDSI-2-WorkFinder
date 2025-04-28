@@ -7,11 +7,3 @@
   --cinza: #1c1c1c;
   --cinza-claro: rgb(69, 69, 69);
 }
-
-/* Configurações globais */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-}
