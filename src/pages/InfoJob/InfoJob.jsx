@@ -1,41 +1,70 @@
-import React from 'react';
-import './InfoJob.css';  // Estilos específicos da tela
+import { useLocation } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom";
 
-const InfoJob = () => {
-  return (
-    <main className="jobforms">
-      <div className="infojob">
-        <h1>Informações da <span>Vaga</span></h1>
-      </div>
+import './JobForms.css'
 
-      <div className="display-job-info">
-        <h3>Informações Principais</h3>
-        <div className="job-info-2">
-          <p><span>Descrição:</span> Desenvolvimento de aplicações web</p>
-          <p><span>Benefícios:</span> Vale alimentação, home office</p>
-        </div>
-      </div>
+export default function InfoJob({ typeUser, fezLogin, handleLogout }) {
+    const location = useLocation();
+    const { jobData } = location.state || {};
 
-      <div className="display-job-info">
-        <h3>Informações Adicionais</h3>
-        <div className="job-info">
-          <p><span>Empresa:</span> Tech Solutions</p>
-          <p><span>Título:</span> Desenvolvedor Front-End</p>
-          <p><span>Habilidades:</span> React, JavaScript, CSS</p>
-          <p><span>Local:</span> São Paulo - SP</p>
-          <p><span>Tipo de Contrato:</span> CLT</p>
-          <p><span>Modalidade:</span> Remoto</p>
-          <p><span>Quantidade de Vagas:</span> 2</p>
-          <p><span>Área de Atuação:</span> Tecnologia da Informação</p>
-          <p><span>PCD:</span> Não</p>
-          <p><span>CNH:</span> B</p>
-          <p><span>Salário:</span> R$ 5.000,00</p>
-        </div>
-      </div>
+    if (!jobData) {
+        return <p>Informações da vaga não encontradas.</p>;
+    }
 
-      <button className="candidatar">Candidatar</button>
-    </main>
-  );
-};
+    return (
+        <>
+            <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} />
+            <main className="jobforms">
+                <div className="infojob">
+                    <h1>Informações da <span>Vaga</span></h1>
+                </div>
 
-export default InfoJob;
+                <div className="display-job-info">
+                    <h3>Informações  Principais</h3>
+                    <div className="job-info-2">
+                        <p><span>Descrição:</span> {jobData.description}</p>
+                        <p><span>Benefícios:</span> {jobData.benefits}</p>
+                    </div>
+                </div>
+
+                <div className="display-job-info">
+                    <h3>Informações Adicionais </h3>
+                    <div className="job-info">
+                        <p><span>Empresa:</span> {jobData.enterprise}</p>
+                        <p><span>Título:</span> {jobData.title}</p>
+                        <p><span>Habilidades:</span> {jobData.ability}</p>
+                        <p><span>Local:</span> {jobData.local}</p>
+                        <p><span>Tipo de Contrato:</span> {jobData.contractType}</p>
+                        <p><span>Modalidade:</span> {jobData.modality}</p>
+                        <p><span>Quantidade de Vagas:</span> {jobData.amount}</p>
+                        <p><span>Área de Atuação:</span> {jobData.areaActivity}</p>
+                        <p><span>PCD:</span> {jobData.pcd}</p>
+                        <p><span>CNH:</span> {jobData.cnh}</p>
+                        <p><span>Salário:</span> {jobData.salary}</p>
+                    </div>
+                </div>
+
+                {
+                    fezLogin ?
+                        (
+                            <Link to={{
+                                pathname: '/applyvacany',
+                            }}
+                            state={{emailEnterprise: jobData.email}}
+                            style={{textDecoration: 'none'}}>
+                                <button className="candidatar">Candidatar</button>
+                            </Link>
+                        ) :
+                        (
+                            <Link to='/login' style={{textDecoration: 'none'}}>
+                                <button className="candidatar">Candidatar</button>
+                            </Link>
+                        )
+                }
+            </main>
+            <Footer />
+        </>
+    );
+}

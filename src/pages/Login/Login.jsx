@@ -11,7 +11,7 @@ import CadBusiness from "../../components/CadBusiness/CadBusiness";
 // // import background from "../components/Background";
 
 
-export default function Login({ setFezLogin, setTypeUser }) {
+export default function Login({ setFezLogin, setTypeUser, setEmail }) {
     const navigate = useNavigate();
     const [frameLogin, setFrameLogin] = useState(2) //0 PARA EMPRESA, 1 PARA USUARIO E 2 PARA LOGIN
     const [isEnterprise, setIsEnterprise] = useState(null)
@@ -148,6 +148,7 @@ export default function Login({ setFezLogin, setTypeUser }) {
                 isEnterprise: isEnterprise
             }, "Login realizado com Sucesso");
 
+            setEmail(dataLogin.email);
             setFezLogin(true);
             setTypeUser(isEnterprise ? 0 : 1);
             navigate("/");

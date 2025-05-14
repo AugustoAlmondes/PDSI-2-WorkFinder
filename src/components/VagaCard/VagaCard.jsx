@@ -1,4 +1,5 @@
 import './cardVaga.css'
+// import Assai from '../../assets/assai.png'
 // import PropTypes from 'prop-types'
 
 export default function VagaCard({nomeEmpresaVaga, cargoVaga}) {
@@ -6,7 +7,7 @@ export default function VagaCard({nomeEmpresaVaga, cargoVaga}) {
         <>
             <div className="card">
                 <div className="foto-card">
-                    <img src="../../assets/assai.png" alt="logo_empresa" />
+                    {/* <img src={Assai} alt="logo_empresa" /> */}
                     <h3>{nomeEmpresaVaga}</h3>
                 </div>
                 <h4>{cargoVaga}</h4>
