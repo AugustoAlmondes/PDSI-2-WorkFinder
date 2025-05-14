@@ -1,0 +1,87 @@
+/* Estilização principal */
+.jobforms {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Título principal */
+  .infojob h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+  }
+  
+  .infojob h1 span {
+    color: #ff8000;
+  }
+  
+  /* Blocos de informação */
+  .display-job-info {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título das seções */
+  .display-job-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  /* Itens principais */
+  .job-info-2 p,
+  .job-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .job-info-2 span,
+  .job-info span {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  /* Botão */
+  .candidatar {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 28px;
+    background-color: #ff8000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .candidatar:hover {
+    background-color: #e67300;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .display-job-info {
+      padding: 20px;
+    }
+  
+    .infojob h1 {
+      font-size: 2rem;
+    }
+  
+    .candidatar {
+      width: 100%;
+    }
+  }
+  
