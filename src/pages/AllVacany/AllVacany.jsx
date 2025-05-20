@@ -90,6 +90,7 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
             email: "6Gd0y@example.com"
         }
     ]);
+    
     const [searchList, setSearchList] = useState([]);
     const [searchOn, setSearchOn] = useState(false);
 
